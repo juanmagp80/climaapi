@@ -1,19 +1,20 @@
 body {
-  font-family: 'Hubballi', cursive;
+  font-family: "Hubballi", cursive;
   background-color: #f1f5f9;
   font-size: 1.6rem;
+  background-image: url("../public/tiempo.png");
+  background-repeat: no-repeat;
 }
 header {
-  background-color: #0ea5e9;
   padding: 1.5rem;
-  border-bottom: 1rem solid #0284c7;
+  border-radius: 0 0 1rem 1rem;
 }
 header h1 {
   text-align: center;
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 3rem;
-  margin:0;
+  margin: 0;
 }
 .dos-columnas {
   display: grid;
@@ -30,12 +31,12 @@ main {
 }
 .contenedor {
   margin: 0 auto 2rem auto;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: white;
   padding: 4rem;
-  -webkit-box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
-  -moz-box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
-  box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
+  -webkit-box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
+  -moz-box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
+  box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
   width: 100%;
 }
 form {
@@ -47,7 +48,6 @@ form {
 }
 .campo label {
   display: block;
-
 }
 .campo input,
 .campo select {
@@ -55,35 +55,186 @@ form {
   border: 1px solid #cbd5e1;
   width: 100%;
   border-radius: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
- input[type="submit"] {
+input[type="submit"] {
   background-color: #0ea5e9;
   margin: 2rem auto 0 auto;
   display: block;
   padding: 1rem 3rem;
   color: white;
   text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   border: none;
   width: 100%;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 @media (min-width: 768px) {
-   input[type="submit"]  {
-     max-width: 400px;
+  input[type="submit"] {
+    max-width: 400px;
   }
 }
- input[type="submit"]:hover {
+input[type="submit"]:hover {
   background-color: #0369a1;
 }
-
 
 .loading {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.notification {
+  width: 200px;
+  background-color: rgb (255, 67, 67);
+  color: black;
+  font-size: 1.5 rem;
+
+  padding: 0.5 rem;
+
+  border-radius: 0.2rem;
+}
+.clima {
+  margin-top: auto;
+  padding: 1rem;
+  color: black;
+  text-align: center;
+  border-radius: 2rem;
+  box-shadow: darkcyan;
+}
+.clima > p:first-of-type {
+  font-size: 4rem;
+  font-family: "Inter", sans-serif;
+}
+.clima p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+.clima p span {
+  font-size: 1rem;
+  font-weight: bold;
+  vertical-align: super;
+}
+.temp_min_max {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+.loader {
+  width: 175px;
+  height: 80px;
+  display: block;
+  margin: auto;
+  background-image: linear-gradient(#263238 50px, transparent 0),
+    radial-gradient(circle 25px at 25px 25px, #fff 100%, transparent 0),
+    radial-gradient(circle 50px at 50px 50px, #fff 100%, transparent 0),
+    radial-gradient(circle 25px at 25px 25px, #fff 100%, transparent 0),
+    linear-gradient(#fff 50px, transparent 0);
+  background-size: 64px 6px, 50px 50px, 100px 76px, 50px 50px, 120px 40px;
+  background-position: 55px 60px, 0px 30px, 37px 0px, 122px 30px, 25px 40px;
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box;
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(-180deg);
+  top: 62px;
+  height: 64px;
+  width: 60px;
+  background-color: #fff;
+  background-image: linear-gradient(#ddd 20px, transparent 0),
+    linear-gradient(#ddd 5px, transparent 0),
+    linear-gradient(#ddd 10px, transparent 0),
+    linear-gradient(#ddd 10px, transparent 0);
+  background-size: 50px 20px;
+  background-position: 5px 36px, 5px 25px, 5px 10px;
+  background-repeat: no-repeat;
+  border-radius: 2px 2px 4px 4px;
+  z-index: 10;
+  box-shadow: 0px -4px 7px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  animation: animloader 4s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    height: 64px;
+  }
+  90%,
+  100% {
+    height: 0px;
+  }
+}
+
+.webmadewell {
+  background-color: white;
+}
+body {
+  margin: 0;
+}
+.sample-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.sample-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: MidnightBlue;
+  opacity: 0.3;
+}
+.sample-header-section {
+  position: relative;
+  padding: 15% 0 10%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  color: hsl(63, 17%, 93%);
+  font-size: 50px;
+  font-weight: 900;
+}
+h2 {
+  font-weight: 400;
+}
+.sample-section-wrap {
+  position: relative;
+  background-color: white;
+}
+.sample-section {
+  position: relative;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+}
+
+.ingrese {
+  color: black;
+  font-size: 3.5 rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 0.5 rem;
+
+  border-radius: 0.2rem;
 }

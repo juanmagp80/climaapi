@@ -1,14 +1,16 @@
-import AppClima from "./components/AppClima"
-import { ClimaProvider } from "./context/ClimaProvider"
+import AppClima from "./components/AppClima";
+import Header from "./components/Header";
+import { ClimaProvider } from "./context/ClimaProvider";
 
 function App() {
-
   return (
     <ClimaProvider>
-      
-    <AppClima/>
+      <header className="App-header">
+        <h1>Consultor del Clima</h1>
+      </header>
+      <AppClima />
     </ClimaProvider>
-  )
+  );
 }
 
-export default App
+export default App;
